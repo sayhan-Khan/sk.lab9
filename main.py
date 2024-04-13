@@ -4,6 +4,14 @@ def encode(password):
         encoded_digit = str((int(digit) + 3) % 10)
         encoded_password += encoded_digit
     return encoded_password
+
+def decode_password(encoded_password):
+    decoded_password = ""
+    for digit in encoded_password:
+        original_digit = str((int(digit) - 3) % 10)  # Shifting each digit down by 3
+        decoded_password += original_digit
+    return decoded_password
+
 def main():
     while True:
         print("Menu")
